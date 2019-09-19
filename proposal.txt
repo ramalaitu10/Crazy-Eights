@@ -1,0 +1,50 @@
+CRAZY Eights
+
+Background, History and motivation.
+Crazy Eights is a popular card game that involves two to seven players, competing to be the first to play all their cards onto the discard pile.(En.wikipedia.org, 2019) It is for this reason that it is classified as a shedding game.(Bicycle Playing Cards, 2019)
+Ordinarily, a normal deck of 52 cards is used when there are 5 or fewer players, and when there are more than five players, two decks are shuffled together and all 104 cards are used. For this specific project, the number of players will be capped at 4.
+The game is not of South African Origin. Its origins are traced back to 1930?s America where it first appeared as Eights, the name Crazy Eights dates back to the 1940s; it is supposedly derived from the United States military designation for discharge of mentally unstable soldiers, Section 8. (En.wikipedia.org) 
+Although the game is well established and has many variations, for this project we will develop a game based on rules that have been (somewhat) agreed upon in the South African game play. However, even in the South African gameplay people seldom agree on all the rules, therefore the rules for this particular implementation of the game have been chosen from a pool of several variations.
+Crazy Eights was chosen for its interesting rules and the challenge that it poses to the developers. However, the main inspiration was the fact that it is a staple in many South African homes and as such would be interesting to implement as a multiplayer digital game, so that it may be enjoyed by people even when they are not in the same physical location.
+
+RULES OF THE GAME
+The goal of the game is to be the first player to get rid of all the cards in your hand.(Bicycle Playing Cards, 2019)
+Each player (Starting with the player on the left of the dealer), is dealt a hand of 8 cards each facing down such that the other players do not know what cards you have been dealt. ?The balance of the pack is placed face down in the centre of the table (whichever surface is being played on) and forms the stock.?(Bicycle Playing Cards, 2019) The dealer turns the top card on the stock up and places it in a separate pile, this card is the starter of the discard pile. (Bicycle Playing cards, 2019)
+If the starter is any of  the special cards (2 of any suit, 7 of any suit, 8 of any suit, J of any suit), the card is buried in the middle of the stock pile and a new starter is picked from the top of the stock.
+To play the game, the participants must play a card that matches the topmost card on the discard pile either by denomination (number) or by suit (i.e. hearts, diamonds, spades, clubs), unless the participant plays an 8, or an 8 was played by the previous player.
+For example, if a 3 of spades is played, the next player can play a three of any suit or play any spade.
+ If at their turn the player does not have a card in their hand that could match the topmost card on the floor, they must draw a card from the stock and pass their turn onto the next player in line. A player can opt to draw a card from the stock for strategic reasons, that is to say they may have cards or a card that they could play, but they would prefer to forfeit their play.
+Special Cards
+There are cards that perform special functions during the gameplay:
+The number 2 of any suit: when played, this card forces the next player in line to draw two cards from the stock pile and add them to their hand. Unless the player has a 2 as well in which case, the next player in line must pick up cards that are equivalent to the sum of all the twos that have been played.
+The number 7 of any suit: changes the order in which the players take turns (for the round in question) by skipping the next player in line.
+The number 8 of any suit: ?may be played ay any time in turn, and the player need only specify a suit for it (But never a number). The next player must play either a card of the specified suit or an eight.? (Bicycle Playing cards, 2019)
+The Jack of any suit: changes the order in which the game is played (indefinitely) by reversing the direction of the game, if the game was moving in the clockwise direction, it will now move anti-clockwise and vice versa.
+How to win
+In order to win the game, a player must play all the cards in their hand and be left with none.
+There are limitations as to what cards the player can end the game with.
+The endgame
+Special cards cannot be used to end the game, therefore if the player is left only with a special card, and no other cards (in their hand) they must draw a card from the stock pile and play with their new hand until they are able to end the game with a non-special card. 
+If it happens that the stock pile is depleted before the end of the game is reached, the cards on the discard pile are shuffled and become the new stock  pile. The topmost card on the previous discard pile is not shuffled but remains on the floor and becomes the starter for that discard pile.
+
+PROBLEM STATEMENT
+The aim of crazy Eights is for the player to be the first to play all the cards in their hand, keeping in mind the rules that were described in the gameplay. The game has a high complexity, especially if there are going to be more than two players in any given round.
+PROBLEM SOLUTION 
+This project aims to implement the gameplay in Java with the following milestones:
+* To develop a deck : a data structure holding objects that represent the cards that are still in the deck and have not been used in the hand or the floor 
+* To develop the hand for each player: a data structure holding objects that represent the cards that have been served to a particular player, constantly excluding the cards that they play to the floor and adding the cards that they pick up from the deck 
+* To develop the discard pile: a data structure that starts off with a starter card from the deck then grows with each card that is played by each of the players to the floor.
+* Writing the code to handle the rules for each of the special cards, so that when the player puts one on the floor, the intended effect is realised in the game.
+* To handle the possibility of players performing actions that are against the rules of the game: for example playing a card that does not match the denomination or suit of the topmost card on the floor, or a player attempting to end the game with a special card.
+* Ranking the players according to the order in which they finished the game, to find the winner and runners up.
+* Choosing/developing a method for shuffling the deck: the only time a shuffle method will be used is on the deck and not on any other data collection.
+* An easy to use and attractive GUI will implemented to improve the user experience.
+* This project will then be presented in the form of a GitHub code and Project document. We aim to provide a demo of the game that may allow for it to be played or tested out during the presentation.
+* A visual guide for the game will be presented with the presentation documents.
+PREDICTED TIMELINE
+Task Beginning DateEnd DateDevelop Data Structures14 Sept18 SeptemberImplement Shuffling (Dev.to, 2019)19 September20 SeptemberCreate Player and Card Classes21 September22 SeptemberImplement Gameplay (code rules of the game)23 September30 SeptemberImplement GUI1 October5 October
+REFERENCES 
+En.wikipedia.org. (2019). Crazy Eights. [online] Available at: https://en.wikipedia.org/wiki/Crazy_Eights [Accessed 2 Sep. 2019].
+Bicycle Playing Cards. (2019). Crazy Eights ? Card Game Rules. [online] Available at: https://bicyclecards.com/how-to-play/crazy-eights/ [Accessed 2 Sep. 2019].
+Dev.to. (2019). Shuffling algorithms and randomization to improve algorithm?s runtime. - DEV Community ??????????. [online] Available at: https://dev.to/s_awdesh/everyday-im-shuffling-im-a-card--fire-1f8b [Accessed 2 Sep. 2019].
+
