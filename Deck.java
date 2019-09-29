@@ -1,49 +1,92 @@
 import java.util.Random;
-import java.util.Scanner;
-
+import java.util.Arrays;
 public class Deck{
-	private String [] deck = new String[52];
-	public Deck(){
 
-	String[] suits = {"S","H","C","D"};
-
-	String[] ranks = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
-	this.deck = MakeDeck(suits,ranks);
-	}
-	public String[] MakeDeck(String[] suits,String[] ranks){
-		int position = 0;
-		String[] NewDeck = new String[52];
-		for(String suit:suits){
-			for(String rank:ranks){
-				NewDeck[position]= rank + suit;
-				position++;
-			}
-			
+   private Card[] deck;
+   
+   //constructors
+   public Deck(){
+      //make 52 new cards, all 13 ranks for each suite
+      this.deck = new Card[52];
+      
+      int index = 52;
+      String[] s = {"Hearts","Spades","Clubs","Diamonds"};
+      String[] r = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
+      int i = 0;
+      Card c = new Card();
+      for (String st : s){
+         //assign suite
+         c.setSuite(st);
+         for(String rnk : r){
+            //assign rank
+            c.setRank(rnk);
+            this.deck[i] =  new Card(c.getSuite(), c.getRank());
+            System.out.println(this.deck[i].toString());
+         }
+         
+         i++;
+      }
+      
+   }
+   //methods
+   public void Shuffle(){
+      //shuffle this deck
+	   String[] d = new String[deck.length];
+       int i = 0;
+       
+        for(Card c : this.deck){
+        //return card string
+			d[i] = c.toString();
+			System.out.println(c.toString());
+			i++;
 		}
-		return NewDeck;
-	}
-	public static int menu(){
-		Scanner input = new Scanner(System.in);
-		int user = input.nextInt();
-		if(user == 1){
-			deal();
-		}
-		else if(user == 2){
-			shuffle();
-		}
-		return 1;
-	}
-	public void players(){
+		Random random = new Random();
+		int x = 20 + random.nextInt(10);
 		
-	}
-	public void display(){
-	}
-	public static void shuffle(){
-	}
-	public static void deal(){
+		int y = 52 - x;
+		
+		String[] first = new String[x];
+		
+		String[] second = new String[y];
+		for(int j = 0;j < x;j++){
+			first[j] = d[j];
+			System.out.println(first[j].toString());
+		}
+		for(int k = 0;k < y;k++){
+			second[k] = d[k+x];
+		}
+   }
+   
+   public String ShannonEntropy(){
+      //return the Shannon entropy of the deck
 
-	}
-	public static void main(String args[]){
-
-	}
+      return "";
+    
+   }
+   
+   public Card topCard(){
+      //returns the topmost card in the deck
+      return new Card();
+   }
+   
+    /* public String toString(){
+       //return a string form of the deck, i.e. a string telling what is contained in the deck
+       String[] d = new String[deck.length];
+       int i = 0;
+       
+       for(Card c : deck){
+          //return card string
+          d[i] = c.toString();
+          i++;
+       }
+      
+       return d.toString();
+    } */
+   
+   public boolean equals(){
+      //checks if two decks are equal
+      return false;
+    
+   }
+   
 }
